@@ -11,6 +11,6 @@ func set_health(value):
 		emit_signal("no_health")
 
 func hit(amount = 1):
-	set_health(health - amount)
+	self.health -= amount
 
 signal no_health
