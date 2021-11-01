@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://World/DirtTileset.png" type="Texture" id=4]
 [ext_resource path="res://World/CliffTileset.png" type="Texture" id=5]
 [ext_resource path="res://World/Grass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/Bat.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -487,35 +488,49 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 161, 89 )
+position = Vector2( 337, 331 )
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 320, 180 )
+region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="DirtyPathTilemap" type="TileMap" parent="."]
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 196612, 0, 0, 196613, 0, 1, 196614, 0, 1, 196615, 0, 2, 327678, 0, 0, 327679, 0, 1, 262144, 0, 1, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 131078, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 131077, 262152, 0, 2, 393214, 0, 131072, 393215, 0, 131073, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 65542, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65541, 327688, 0, 196613, 327689, 0, 196609, 327690, 0, 6, 327691, 0, 2, 393220, 0, 131072, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131074, 393226, 0, 131072, 393227, 0, 65543, 458763, 0, 65539, 458770, 0, 3, 524299, 0, 196612, 524300, 0, 6, 524301, 0, 1, 524302, 0, 1, 524303, 0, 1, 524304, 0, 1, 524305, 0, 1, 524306, 0, 131079, 589836, 0, 131072, 589837, 0, 65542, 589838, 0, 65537, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65541, 589842, 0, 131074, 655373, 0, 131072, 655374, 0, 65542, 655375, 0, 65537, 655376, 0, 65541, 655377, 0, 131074, 720910, 0, 65536, 720911, 0, 65541, 720912, 0, 131074, 786446, 0, 131072, 786447, 0, 131074 )
+tile_data = PoolIntArray( -131067, 0, 0, -131066, 0, 1, -131065, 0, 1, -131064, 0, 1, -131063, 0, 1, -131062, 0, 1, -131061, 0, 2, -65531, 0, 131072, -65530, 0, 131073, -65529, 0, 131073, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 65542, -65525, 0, 65538, 10, 0, 65536, 11, 0, 65538, 65546, 0, 65536, 65547, 0, 65538, 131082, 0, 65536, 131083, 0, 65538, 196612, 0, 0, 196613, 0, 1, 196614, 0, 1, 196615, 0, 2, 196618, 0, 65536, 196619, 0, 65538, 327676, 0, 0, 327677, 0, 1, 327678, 0, 1, 327679, 0, 1, 262144, 0, 1, 262145, 0, 1, 262146, 0, 1, 262147, 0, 1, 262148, 0, 131078, 262149, 0, 65537, 262150, 0, 65537, 262151, 0, 131077, 262152, 0, 1, 262153, 0, 1, 262154, 0, 131078, 262155, 0, 65538, 262162, 0, 3, 393212, 0, 65536, 393213, 0, 65541, 393214, 0, 131073, 393215, 0, 131073, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131073, 327684, 0, 65542, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65541, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 65542, 327691, 0, 65538, 327698, 0, 65539, 458748, 0, 65536, 458749, 0, 65538, 393220, 0, 131072, 393221, 0, 131073, 393222, 0, 131073, 393223, 0, 131074, 393226, 0, 131072, 393227, 0, 65543, 393234, 0, 65539, 524284, 0, 65536, 524285, 0, 65538, 458763, 0, 65539, 458770, 0, 65539, 589820, 0, 65536, 589821, 0, 65538, 524299, 0, 196612, 524300, 0, 8, 524301, 0, 196609, 524302, 0, 6, 524303, 0, 1, 524304, 0, 1, 524305, 0, 1, 524306, 0, 131079, 655356, 0, 131072, 655357, 0, 131074, 589836, 0, 131075, 589838, 0, 65536, 589839, 0, 65537, 589840, 0, 65537, 589841, 0, 65541, 589842, 0, 131074, 655373, 0, 196608, 655374, 0, 262150, 655375, 0, 65537, 655376, 0, 65541, 655377, 0, 131074, 720910, 0, 65536, 720911, 0, 65541, 720912, 0, 131074, 786446, 0, 131072, 786447, 0, 131074 )
 
 [node name="DirtyCliffTilemap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 cell_size = Vector2( 32, 32 )
+collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 65535, 0, 0, 0, 0, 5, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 0, 196610, 131071, 0, 131072, 65536, 0, 131074, 65542, 0, 0, 65543, 0, 1, 65544, 0, 2, 131078, 0, 65536, 131079, 0, 65537, 131080, 0, 65538, 262143, 0, 0, 196608, 0, 2, 196614, 0, 131072, 196615, 0, 131073, 196616, 0, 131074, 327679, 0, 65536, 262144, 0, 131077, 262145, 0, 1, 262146, 0, 1, 262147, 0, 2, 393215, 0, 131072, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131074 )
+tile_data = PoolIntArray( 65535, 0, 0, 0, 0, 5, 1, 0, 196609, 2, 0, 196609, 3, 0, 196609, 4, 0, 196610, 6, 0, 196608, 7, 0, 196609, 8, 0, 196610, 131071, 0, 131072, 65536, 0, 131074, 131078, 0, 3, 131080, 0, 3, 262143, 0, 0, 196608, 0, 2, 196614, 0, 131075, 196616, 0, 131075, 327679, 0, 65536, 262144, 0, 131077, 262145, 0, 1, 262146, 0, 1, 262147, 0, 2, 393215, 0, 131072, 327680, 0, 131073, 327681, 0, 131073, 327682, 0, 131073, 327683, 0, 131074 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 94, 52 )
 
+[node name="Bat" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 104, 80 )
+
+[node name="Bat2" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 240, 152 )
+
+[node name="Bat3" parent="YSort" instance=ExtResource( 7 )]
+position = Vector2( 160, 176 )
+
 [node name="Bushes" type="YSort" parent="YSort"]
 
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 42, 77 )
+rotation = 0.0596006
 
 [node name="Bush2" parent="YSort/Bushes" instance=ExtResource( 1 )]
-position = Vector2( 91, 107 )
+position = Vector2( 214, 179 )
+
+[node name="Bush5" parent="YSort/Bushes" instance=ExtResource( 1 )]
+position = Vector2( 283, 179 )
 
 [node name="Bush3" parent="YSort/Bushes" instance=ExtResource( 1 )]
 position = Vector2( 161, 60 )
@@ -525,17 +540,35 @@ position = Vector2( 167, 129 )
 
 [node name="Grass" type="YSort" parent="YSort"]
 
-[node name="Grass" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 34, 109 )
-
-[node name="Grass2" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 50, 109 )
-
 [node name="Grass3" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 206, 52 )
+position = Vector2( 194, 40 )
+
+[node name="Grass9" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 40, 112 )
+
+[node name="Grass10" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 64, 112 )
+
+[node name="Grass11" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 88, 112 )
+
+[node name="Grass12" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 112, 112 )
+
+[node name="Grass13" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 40, 40 )
 
 [node name="Grass4" parent="YSort/Grass" instance=ExtResource( 6 )]
-position = Vector2( 206, 72 )
+position = Vector2( 240, 40 )
+
+[node name="Grass7" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 266, 40 )
 
 [node name="Grass5" parent="YSort/Grass" instance=ExtResource( 6 )]
 position = Vector2( 230, 72 )
+
+[node name="Grass8" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 230, 101 )
+
+[node name="Grass6" parent="YSort/Grass" instance=ExtResource( 6 )]
+position = Vector2( 218, 40 )
