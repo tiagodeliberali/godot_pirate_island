@@ -12,6 +12,5 @@ func set_health(value):
 
 func hit(amount = 1):
 	set_health(health - amount)
-	print(health)
 
 signal no_health
