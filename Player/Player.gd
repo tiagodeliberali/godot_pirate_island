@@ -37,9 +37,9 @@ func _physics_process(delta):
 		MOVE:
 			move_state(delta)
 		ROLL:
-			roll_state(delta)
+			roll_state()
 		ATTACK:
-			attack_state(delta)
+			attack_state()
 		
 	
 func move_state(delta):
@@ -69,11 +69,11 @@ func move_state(delta):
 	if Input.is_action_just_pressed("roll"):
 		state = ROLL
 
-func attack_state(delta):
+func attack_state():
 	velocity = Vector2.ZERO
 	animationState.travel("Attack")
 	
-func roll_state(delta):
+func roll_state():
 	velocity = roll_vector * ROLL_SPEED
 	move()
 	animationState.travel("Roll")

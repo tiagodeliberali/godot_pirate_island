@@ -16,13 +16,13 @@ region = Rect2( 24, 0, 24, 24 )
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": false,
-"name": "Animation",
+"name": "Animate",
 "speed": 10.0
 } ]
 
 [node name="HitEffect" type="AnimatedSprite"]
 frames = SubResource( 3 )
-animation = "Animation"
+animation = "Animate"
 offset = Vector2( 0, -8 )
 script = ExtResource( 2 )
 
